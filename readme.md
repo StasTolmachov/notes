@@ -38,3 +38,16 @@ cmd := exec.Command("clear")
 cmd.Stdout = os.Stdout
 cmd.Run()
 ```
+
+
+# Postgres SQL
+
+```sql
+insert into tbl (k, v) values (11, '11string');
+insert into tbl (k, v) values (11, '11string'), (2, '2str'), (3, '3str');
+update tbl set k = 22 where k = 11;
+delete from tbl where k = 22;
+select * from tbl;
+update tbl set v = '44str' where k = 44 returning *;
+table tbl;
+```
