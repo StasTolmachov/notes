@@ -32,3 +32,9 @@ connect to psql
 ```shell
 psql -U postgres
 ```
+
+```go
+cmd := exec.Command("clear")
+cmd.Stdout = os.Stdout
+cmd.Run()
+```
