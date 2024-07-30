@@ -35,6 +35,11 @@ psql -U postgres
 
 # Postgres SQL
 
+```postgresql
+--порядок использования
+FROM > WHERE > GROUP BY > HAVING > ORDER BY > DISTINCT > OFFSET > LIMIT > FETCH
+```
+
 ```sql
 insert into tbl (k, v) values (11, '11string');
 insert into tbl (k, v) values (11, '11string'), (2, '2str'), (3, '3str');
@@ -45,7 +50,63 @@ update tbl set v = '44str' where k = 44 returning *;
 table tbl;
 ```
 
+```postgresql
+--Сортировка по нескольким столбцам:
+SELECT column1, column2 FROM table1 ORDER BY column2 DESC, column1 ASC;
+```
+
+```markdown
+SELECT * FROM employees limit 3 offset 3;
+id | name  |       position       | department_id
+----+-------+----------------------+---------------
+4 | Diana | Marketing Specialist |             4
+5 | Eve   | Accountant           |             5
+6 | Frank | IT Support           |             6
+(3 rows)
+```
+
+```markdown
+-- выборкой без учета регистра ILIKE
+SELECT * FROM employees WHERE name ILIKE 'eve';
+ id | name |  position  | department_id 
+----+------+------------+---------------
+  5 | Eve  | Accountant |             5
+(1 row)
+```
+
+```postgresql
+-- Подсчет количества сотрудников в каждом департаменте
+SELECT department_id, COUNT(*) as employee_count
+FROM employees
+GROUP BY department_id
+ORDER BY department_id;
+```
+```markdown
+department_id | employee_count 
+---------------+----------------
+             1 |              1
+             2 |              1
+             3 |              1
+             4 |              1
+             5 |              1
+             6 |              1
+             7 |              1
+             8 |              1
+             9 |              1
+            10 |              1
+(10 rows)
+```
+
+
+
 
 # ShortCut
 ## Goland
 `Double ⇧Shift` - Search everywhere
+
+
+# ffmpeg
+Вытянуть субтитры
+```shell
+ffmpeg -i MovieName.mkv -map 0:s:0 subs.srt
+```
