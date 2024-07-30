@@ -55,7 +55,7 @@ table tbl;
 SELECT column1, column2 FROM table1 ORDER BY column2 DESC, column1 ASC;
 ```
 
-```markdown
+```sql
 SELECT * FROM employees limit 3 offset 3;
 id | name  |       position       | department_id
 ----+-------+----------------------+---------------
@@ -65,7 +65,10 @@ id | name  |       position       | department_id
 (3 rows)
 ```
 
-```markdown
+
+
+
+```sql
 -- выборкой без учета регистра ILIKE
 SELECT * FROM employees WHERE name ILIKE 'eve';
  id | name |  position  | department_id 
@@ -75,13 +78,12 @@ SELECT * FROM employees WHERE name ILIKE 'eve';
 ```
 
 ```sql
--- Подсчет количества сотрудников в каждом департаменте
+--Подсчет количества сотрудников в каждом департаменте
 SELECT department_id, COUNT(*) as employee_count
 FROM employees
 GROUP BY department_id
 ORDER BY department_id;
-```
-```markdown
+
 department_id | employee_count 
 ---------------+----------------
              1 |              1
@@ -96,6 +98,10 @@ department_id | employee_count
             10 |              1
 (10 rows)
 ```
+
+
+
+
 
 
 
