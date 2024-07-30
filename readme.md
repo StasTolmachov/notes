@@ -35,7 +35,7 @@ psql -U postgres
 
 # Postgres SQL
 
-```postgresql
+```sql
 --порядок использования
 FROM > WHERE > GROUP BY > HAVING > ORDER BY > DISTINCT > OFFSET > LIMIT > FETCH
 ```
@@ -50,7 +50,7 @@ update tbl set v = '44str' where k = 44 returning *;
 table tbl;
 ```
 
-```postgresql
+```sql
 --Сортировка по нескольким столбцам:
 SELECT column1, column2 FROM table1 ORDER BY column2 DESC, column1 ASC;
 ```
@@ -74,7 +74,7 @@ SELECT * FROM employees WHERE name ILIKE 'eve';
 (1 row)
 ```
 
-```postgresql
+```sql
 -- Подсчет количества сотрудников в каждом департаменте
 SELECT department_id, COUNT(*) as employee_count
 FROM employees
