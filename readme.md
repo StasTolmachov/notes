@@ -3,6 +3,7 @@
 - [Postgres SQL](#postgres-sql)
 - [Shortcut](#shortcut)
   - [goland](#goland)
+- [golang](golang/golang.md)
 
 
 # DOCKER
@@ -41,7 +42,7 @@ FROM > WHERE > GROUP BY > HAVING > ORDER BY > DISTINCT > OFFSET > LIMIT > FETCH
 ```
 
 ```sql
-insert into tbl (k, v) values (11, '11string');
+insert into tbl (k, v)values (11, '11string');
 insert into tbl (k, v) values (11, '11string'), (2, '2str'), (3, '3str');
 update tbl set k = 22 where k = 11;
 delete from tbl where k = 22;
