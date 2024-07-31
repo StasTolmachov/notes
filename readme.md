@@ -3,7 +3,6 @@
 - [Postgres SQL](#postgres-sql)
 - [Shortcut](#shortcut)
   - [goland](#goland)
-- [golang](golang/golang.md)
 
 
 # DOCKER
