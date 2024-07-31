@@ -99,7 +99,31 @@ department_id | employee_count
 (10 rows)
 ```
 
+```sql
+-- Алиасы назначаются в блоке FROM для таблиц и в блоке SELECT для столбцов.
+-- Назначение псевдонимов для таблиц
+-- Без псевдонимов
+SELECT product_photo.url, product.name
+FROM product_photo
+JOIN product ON product.id = product_photo.product_id;
 
+-- С псевдонимами
+SELECT pp.url, p.name
+FROM product_photo pp
+JOIN product p ON p.id = pp.product_id;
+-- --------------------------------------------
+  
+-- Назначение псевдонимов для столбцов
+-- Без псевдонимов
+SELECT product_photo.url, product.name
+FROM product_photo
+       JOIN product ON product.id = product_photo.product_id;
+
+-- С псевдонимами для столбцов
+SELECT pp.url AS photo_url, p.name AS product_name
+FROM product_photo pp
+       JOIN product p ON p.id = pp.product_id;
+```
 
 
 
